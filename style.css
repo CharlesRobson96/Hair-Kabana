@@ -1,0 +1,576 @@
+/* ===================================
+   HAIR KABANA - ELEGANT SALON WEBSITE
+   Style Guide:
+   - Sophisticated, refined aesthetic
+   - Neutral palette with gold accents
+   - Ample white space
+   - Elegant typography
+   =================================== */
+
+/* ===================================
+   CSS VARIABLES (EASY TO CUSTOMIZE)
+   =================================== */
+:root {
+    /* Color Palette - Elegant & Luxe */
+    --primary-dark: #2c2c2c;        /* Charcoal for text */
+    --primary-light: #ffffff;       /* Pure white */
+    --accent-gold: #c9a961;         /* Sophisticated gold */
+    --accent-gold-light: #e4d4a8;   /* Lighter gold for hover */
+    --neutral-gray: #f5f5f5;        /* Soft background gray */
+    --mid-gray: #666666;            /* Secondary text */
+    --border-color: #e0e0e0;        /* Subtle borders */
+    
+    /* Typography */
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'Lato', 'Helvetica Neue', Arial, sans-serif;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+    --spacing-xl: 4rem;
+    
+    /* Layout */
+    --max-width: 1200px;
+    --header-height: 80px;
+}
+
+/* ===================================
+   RESET & BASE STYLES
+   =================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--primary-dark);
+    background-color: var(--primary-light);
+}
+
+/* ===================================
+   TYPOGRAPHY
+   =================================== */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: var(--spacing-sm);
+}
+
+h1 {
+    font-size: 3.5rem;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    letter-spacing: 0.5px;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h4 {
+    font-size: 1.3rem;
+}
+
+p {
+    margin-bottom: var(--spacing-sm);
+    color: var(--mid-gray);
+}
+
+a {
+    color: var(--accent-gold);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+/* ===================================
+   HEADER & NAVIGATION (STICKY)
+   =================================== */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--primary-light);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.site-header.scrolled {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--primary-dark);
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.logo:hover {
+    color: var(--accent-gold);
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-lg);
+}
+
+.main-nav a {
+    color: var(--primary-dark);
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 400;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--accent-gold);
+    border-bottom-color: var(--accent-gold);
+}
+
+/* Mobile menu toggle (hidden by default) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--primary-dark);
+    cursor: pointer;
+}
+
+/* ===================================
+   MAIN CONTENT SPACING
+   (Account for fixed header)
+   =================================== */
+main {
+    margin-top: var(--header-height);
+}
+
+/* ===================================
+   HERO SECTION (HOME PAGE)
+   =================================== */
+.hero {
+    height: 70vh;
+    min-height: 500px;
+    background: linear-gradient(rgba(44, 44, 44, 0.3), rgba(44, 44, 44, 0.3)),
+                url('hero-placeholder.jpg') center/cover no-repeat;
+    /* PLACEHOLDER: Replace 'hero-placeholder.jpg' with your hero image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--primary-light);
+}
+
+.hero-content {
+    max-width: 700px;
+    padding: var(--spacing-md);
+}
+
+.hero h1 {
+    color: var(--primary-light);
+    margin-bottom: var(--spacing-md);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-tagline {
+    font-size: 1.3rem;
+    color: var(--primary-light);
+    margin-bottom: var(--spacing-lg);
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* ===================================
+   BUTTONS
+   =================================== */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-size: 0.95rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border: 2px solid var(--accent-gold);
+    background-color: var(--accent-gold);
+    color: var(--primary-light);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0.5rem;
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: var(--accent-gold);
+    border-color: var(--accent-gold);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary-light);
+    border-color: var(--primary-light);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+}
+
+/* ===================================
+   SECTION LAYOUT
+   =================================== */
+.section {
+    padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.section-light {
+    background-color: var(--primary-light);
+}
+
+.section-gray {
+    background-color: var(--neutral-gray);
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.section-header h2 {
+    color: var(--primary-dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: var(--mid-gray);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Accent line under section titles */
+.section-header h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 2px;
+    background-color: var(--accent-gold);
+    margin: var(--spacing-sm) auto 0;
+}
+
+/* ===================================
+   HOME PAGE - INTRO SECTION
+   =================================== */
+.intro-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.intro-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+}
+
+/* ===================================
+   SERVICES PAGE - SERVICE GRID
+   =================================== */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.service-card {
+    background-color: var(--primary-light);
+    padding: var(--spacing-lg);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.service-card h3 {
+    color: var(--primary-dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+.service-card p {
+    margin-bottom: var(--spacing-md);
+}
+
+.service-price {
+    font-size: 1.2rem;
+    color: var(--accent-gold);
+    font-weight: 700;
+}
+
+/* ===================================
+   ABOUT PAGE - STORY SECTION
+   =================================== */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+    margin-top: var(--spacing-lg);
+}
+
+.about-text h3 {
+    margin-top: var(--spacing-md);
+}
+
+.about-text p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.about-image {
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(rgba(201, 169, 97, 0.2), rgba(201, 169, 97, 0.2)),
+                url('about-placeholder.jpg') center/cover no-repeat;
+    /* PLACEHOLDER: Replace 'about-placeholder.jpg' with salon interior/team photo */
+}
+
+/* ===================================
+   CONTACT PAGE - INFO GRID
+   =================================== */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
+}
+
+.contact-info h3 {
+    margin-bottom: var(--spacing-md);
+}
+
+.contact-detail {
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.contact-detail:last-child {
+    border-bottom: none;
+}
+
+.contact-detail h4 {
+    color: var(--accent-gold);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: var(--spacing-xs);
+}
+
+.contact-detail p {
+    font-size: 1.05rem;
+    color: var(--primary-dark);
+}
+
+.contact-detail a {
+    color: var(--primary-dark);
+}
+
+.contact-detail a:hover {
+    color: var(--accent-gold);
+}
+
+.hours-list {
+    list-style: none;
+}
+
+.hours-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    color: var(--primary-dark);
+}
+
+.hours-list .day {
+    font-weight: 600;
+}
+
+.contact-map {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(rgba(201, 169, 97, 0.1), rgba(201, 169, 97, 0.1)),
+                var(--neutral-gray);
+    /* PLACEHOLDER: Add embedded Google Map or location image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--mid-gray);
+    font-style: italic;
+}
+
+/* ===================================
+   FOOTER
+   =================================== */
+.site-footer {
+    background-color: var(--primary-dark);
+    color: var(--primary-light);
+    padding: var(--spacing-lg) var(--spacing-md);
+    text-align: center;
+}
+
+.footer-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.footer-content p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: var(--spacing-sm);
+}
+
+.social-links {
+    margin: var(--spacing-md) 0;
+}
+
+.social-links a {
+    color: var(--accent-gold);
+    font-size: 1.5rem;
+    margin: 0 var(--spacing-sm);
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-light);
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+    :root {
+        --spacing-xl: 3rem;
+        --spacing-lg: 2rem;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    /* Mobile navigation */
+    .menu-toggle {
+        display: block;
+    }
+    
+    .main-nav {
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        background-color: var(--primary-light);
+        border-bottom: 1px solid var(--border-color);
+        display: none;
+    }
+    
+    .main-nav.active {
+        display: block;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        gap: 0;
+        padding: var(--spacing-sm) 0;
+    }
+    
+    .main-nav li {
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .main-nav a {
+        display: block;
+        padding: var(--spacing-sm) var(--spacing-md);
+        border-bottom: none;
+    }
+    
+    /* Adjust grid layouts for tablet */
+    .about-content,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .hero {
+        height: 60vh;
+        min-height: 400px;
+    }
+    
+    .hero-tagline {
+        font-size: 1.1rem;
+    }
+    
+    .btn {
+        padding: 0.8rem 2rem;
+        font-size: 0.85rem;
+    }
+    
+    .section {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+}
