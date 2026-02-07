@@ -187,8 +187,7 @@ main {
     height: 70vh;
     min-height: 500px;
     background: linear-gradient(rgba(44, 44, 44, 0.3), rgba(44, 44, 44, 0.3)),
-                url('hero-placeholder.jpg') center/cover no-repeat;
-    /* PLACEHOLDER: Replace 'hero-placeholder.jpg' with your hero image */
+                url('images/hair-wash.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -372,8 +371,7 @@ main {
     width: 100%;
     height: 500px;
     background: linear-gradient(rgba(201, 169, 97, 0.2), rgba(201, 169, 97, 0.2)),
-                url('about-placeholder.jpg') center/cover no-repeat;
-    /* PLACEHOLDER: Replace 'about-placeholder.jpg' with salon interior/team photo */
+                url('images/Crystal.png') center/cover no-repeat;
 }
 
 /* ===================================
